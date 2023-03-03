@@ -1,0 +1,32 @@
+<!-- with out the context just some javascript code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some JavaScript</title>
+</head>
+<body>
+    <input type="text" id="inputName" />
+    <button onClick="swapCase()">Swap Case</button>
+    <span id="outputName"></span>
+    <script>
+        function swapCase(){
+            const name = document.getElementById("inputName").value;
+            const character = name.split("");
+            const changeCharacter = character.map(
+                function(c){
+                    if(c == c.toLowerCase()){
+                        return c.toUpperCase();
+                    }else{
+                        return c.toLowerCase();
+                    }
+                }
+            );
+            const changeName=changeCharacter.join("");
+            document.getElementById("outputName").textContent = changeName;
+        }
+        </script>
+</body>
+</html>
